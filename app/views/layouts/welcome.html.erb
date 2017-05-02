@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RubyApp</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= link_to image_tag("logo.png", alt: "Logo"), root_path , class: "navbar-brand" %>
+
+            <b>Bienvenue sur le gestionnaire de tâche </b>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Liste des Tâches', tasks_path %></li>
+            <li><%= link_to 'Liste des Commentaires', comments_path %></li>
+            <li><%= link_to 'A propos', pages_propos_path %></li>
+          </ul>
+        </div>
+
+      </nav>
+      <div class="row" id="body">
+        <div class="col-md-10 col-md-offset-1">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

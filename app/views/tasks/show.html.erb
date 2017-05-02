@@ -1,0 +1,57 @@
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<h1><%= @task.titre %></h1>
+
+
+<div class="center bottom">
+<button class="btn btn-primary "><%= link_to 'Modifier', edit_task_path(@task) %></button>
+<button class="btn btn-primary "><%= link_to 'Retour', tasks_path %></button>
+</div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <b><%= @task.titre %> - <% if @task.status==1 %> A faire <% end %> <% if @task.status==2 %> En cours <% end %> <% if @task.status==3 %> Terminée <% end %></b>
+    </div>
+    <div class="panel-body">
+      <p><%= @task.contenu %></p>
+      <p>Publié le <%= @task.created_at %> par <%= @task.auteur %></p>
+    </div>
+  </div>
+  <% @task.comments.each do |comment| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <b> Commentaire de <%= comment.auteur %> à propos de la tâche : <%= comment.task.titre %></b>
+      <p><%= comment.contenu %></p>
+      <p>Publié le <%= comment.created_at %></p>
+      <div class="btn-group" role="group" aria-label="...">
+        <%= link_to edit_comment_path(comment), class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <% end %>
+        <%= link_to [comment.task, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: 'btn btn-default'  do %>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<div class="panel panel-default">
+<h4 class="center">Commenter</h4>
+<%= form_for([@task, @task.comments.build]) do |f| %>
+  <div class="form-group">
+    <%= f.label :contenu %>
+    <%= f.text_area :contenu, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :auteur %>
+    <%= f.text_field :auteur, class: 'form-control' %>
+  </div>
+
+  <button type="submit" class="btn btn-primary"><%= f.submit "Valider" %></button>
+
+<% end %>
+</div>

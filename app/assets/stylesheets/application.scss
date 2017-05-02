@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .navbar-brand img{
+   width: 50px;
+ }
+
+h1{
+  text-align: center;
+margin-bottom:50px !important;
+}
+
+ .navbar-brand {
+   padding: 5px 15px !important;
+   font-family :"Open Sans", Arial, Sans-Serif !important;
+ }
+
+input[type='submit']{
+  background: none;
+  border: none;
+}
+
+
+
+ #body{
+   margin-top: 100px;
+ }
+.navbar-header b{
+  line-height: 50px;
+}
+
+a, a:focus, a:hover, a:active{
+  text-decoration: none !important;
+  background: none !important;
+}
+
+.btn a,.btn a:focus, .btn a:hover, .btn a:active{
+color:white;
+}
+
+.center{
+  text-align: center
+}
+
+.bottom{
+margin-bottom:30px;
+}
+
+form{
+padding: 20px;
+}
+
+#actions{
+  float:right;
+}
+
+.panel-body b{
+  line-height: 30px;
+}
+@import "bootstrap-sprockets";
+
+ @import 'bootstrap'

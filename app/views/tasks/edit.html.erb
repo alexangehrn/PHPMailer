@@ -1,0 +1,10 @@
+
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %><h1>Modifier la tâche</h1>
+<div class="panel panel-default">
+<h4 class="center">Modifier la tâche</h4>
+<%= render 'form', task: @task %>
+
+<%= link_to 'Show', @task %> |
+<%= link_to 'Back', tasks_path %>

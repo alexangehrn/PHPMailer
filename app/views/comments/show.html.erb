@@ -1,0 +1,13 @@
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <b> Commentaire de <%= @comment.auteur %> à propos de la tâche : <%= @comment.task.titre %></b>
+    <p><%= @comment.contenu %></p>
+    <p>Publié le <%= @comment.date %></p>
+  </div>
+</div>
+<div class="center bottom">
+<button class="btn btn-primary "><%= link_to 'Retour aux tâches', tasks_path %></button>
+</div>

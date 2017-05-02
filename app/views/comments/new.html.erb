@@ -1,0 +1,8 @@
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<h1>New Comment</h1>
+
+<%= render 'form', comment: @comment %>
+
+<%= link_to 'Back', comments_path %>

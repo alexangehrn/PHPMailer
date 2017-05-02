@@ -1,0 +1,21 @@
+
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+
+<h1>Liste des Commentaires</h1>
+
+<ul class="list-group">
+  <% @comments.each do |comment| %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <b> Commentaire de <%= comment.auteur %> à propos de la tâche : <%= comment.task.titre %></b>
+    </div>
+    <div class="panel-body">
+      <p><%= comment.contenu %></p>
+      <p>Publié le <%= comment.created_at %></p>
+    </div>
+  </div>
+  <% end %>
+</ul>

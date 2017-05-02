@@ -1,0 +1,10 @@
+<% if notice %>
+<p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<h1>Modifier le commentaire</h1>
+<div class="panel panel-default">
+<h4 class="center">Modifier le commentaire</h4>
+<%= render 'form', comment: @comment %>
+
+<%= link_to 'Show', @comment %> |
+<%= link_to 'Back', comments_path %>
